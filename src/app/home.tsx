@@ -2,13 +2,28 @@
 "use client";
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faVideo,
+  faMicrophone,
+  faMoon,
+  faArrowsUpDownLeftRight,
+  faCheck,
+  faHome,
+  faBrain,
+  faTree,
+  faEnvelope,
+  faGlobe,
+  faPhone,
+} from '@fortawesome/free-solid-svg-icons';
+
 const HomePage: React.FC = () => {
 const [selectedPackage, setSelectedPackage] = useState<string>('');
 return (
 <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
 {/* Hero Section */}
 <div
-    className="relative h-screen flex items-center justify-center overflow-hidden"
+    className="relative min-h-screen flex items-center justify-center overflow-hidden"
     style={{
     backgroundImage: `url('/images/splash1.jpg')`, // <-- Updated
     backgroundSize: 'cover',
@@ -28,29 +43,29 @@ return (
             height={80}
         />
         </div>
-        <div className="flex space-x-4">
-        <span className="px-6 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm font-medium">
-            Secure
-        </span>
-        <span className="px-6 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm font-medium">
-            Professional
-        </span>
-        <span className="px-6 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm font-medium">
-            Reliable
-        </span>
-        </div>
     </div>
     </div>
     {/* Hero Content */}
-    <div className="relative z-10 max-w-7xl mx-auto px-8 grid grid-cols-2 gap-16 items-center">
-    <div className="text-white">
-        <h1 className="text-6xl font-bold mb-8 leading-tight">
+    <div className="relative z-10 max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center py-24 lg:py-0">
+    <div className="text-white text-center lg:text-left">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
         Advanced Security Camera Solutions
         </h1>
-        <p className="text-xl text-blue-100 mb-8 leading-relaxed">
+        <div className="flex space-x-4 mb-4 justify-center lg:justify-start">
+          <span className="px-6 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm font-medium">
+              Secure
+          </span>
+          <span className="px-6 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm font-medium">
+              Professional
+          </span>
+          <span className="px-6 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm font-medium">
+              Reliable
+          </span>
+        </div>
+        <p className="text-lg lg:text-xl text-blue-100 mb-8 leading-relaxed">
         Protect what matters most with our cutting-edge surveillance technology. Professional installation, local storage, and 24/7 monitoring capabilities for complete peace of mind.
         </p>
-        <div className="flex space-x-6">
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start">
         <button className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold !rounded-button whitespace-nowrap cursor-pointer transition-colors">
             View Packages
         </button>
@@ -59,8 +74,8 @@ return (
         </button>
         </div>
     </div>
-    <div>
-        <div className="relative w-96 h-96 rounded-full overflow-hidden border-4 border-white/20 backdrop-blur-sm">
+    <div className="flex justify-center">
+        <div className="relative w-72 h-72 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-white/20 backdrop-blur-sm">
         <Image
             src="/images/turret_cam.jpg" // <-- Updated
             alt="Security Camera"
@@ -74,15 +89,12 @@ return (
 {/* Features Section */}
 <div className="py-20 bg-slate-800">
     <div className="max-w-7xl mx-auto px-8">
-    <div className="text-center mb-16">
-        <h2 className="text-4xl font-bold text-white mb-4">Premium Camera Features</h2>
-        <p className="text-xl text-blue-200">Industry-leading technology for maximum security coverage</p>
-    </div>
-    <div className="grid grid-cols-2 gap-8">
+    <div className="text-center mb-12 md:mb-16">
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Premium Camera Features</h2>
         {/* HD Feature */}
         <div className="flex items-start space-x-6 p-8 bg-slate-700/50 rounded-2xl backdrop-blur-sm h-full">
         <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
-            <i className="fas fa-video text-white text-2xl"></i>
+            <FontAwesomeIcon icon={faVideo} className="text-white text-2xl" />
         </div>
         <div>
             <h3 className="text-2xl font-bold text-white mb-4">4K Ultra HD Resolution</h3>
@@ -94,7 +106,7 @@ return (
         {/* Audio Feature */}
         <div className="flex items-start space-x-6 p-8 bg-slate-700/50 rounded-2xl backdrop-blur-sm h-full">
         <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
-            <i className="fas fa-microphone text-white text-2xl"></i>
+            <FontAwesomeIcon icon={faMicrophone} className="text-white text-2xl" />
         </div>
         <div>
             <h3 className="text-2xl font-bold text-white mb-4">Two-Way Audio Communication</h3>
@@ -106,7 +118,7 @@ return (
         {/* Night Vision Feature */}
         <div className="flex items-start space-x-6 p-8 bg-slate-700/50 rounded-2xl backdrop-blur-sm h-full">
         <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
-            <i className="fas fa-moon text-white text-2xl"></i>
+            <FontAwesomeIcon icon={faMoon} className="text-white text-2xl" />
         </div>
         <div>
             <h3 className="text-2xl font-bold text-white mb-4">Advanced Night Vision</h3>
@@ -118,7 +130,7 @@ return (
         {/* PTZ Feature */}
         <div className="flex items-start space-x-6 p-8 bg-slate-700/50 rounded-2xl backdrop-blur-sm h-full">
         <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
-            <i className="fas fa-arrows-alt text-white text-2xl"></i>
+            <FontAwesomeIcon icon={faArrowsUpDownLeftRight} className="text-white text-2xl" />
         </div>
         <div>
             <h3 className="text-2xl font-bold text-white mb-4">PTZ Control System</h3>
@@ -150,19 +162,19 @@ return (
         </div>
         <ul className="space-y-4 mb-8 flex-grow">
             <li className="flex items-center text-blue-200">
-            <i className="fas fa-check text-blue-400 mr-3"></i>
+            <FontAwesomeIcon icon={faCheck} className="text-blue-400 mr-3" />
             Professional doorbell camera installation
             </li>
             <li className="flex items-center text-blue-200">
-            <i className="fas fa-check text-blue-400 mr-3"></i>
+            <FontAwesomeIcon icon={faCheck} className="text-blue-400 mr-3" />
             Single garage monitoring camera
             </li>
             <li className="flex items-center text-blue-200">
-            <i className="fas fa-check text-blue-400 mr-3"></i>
+            <FontAwesomeIcon icon={faCheck} className="text-blue-400 mr-3" />
             AI-powered motion detection alerts
             </li>
             <li className="flex items-center text-blue-200">
-            <i className="fas fa-check text-blue-400 mr-3"></i>
+            <FontAwesomeIcon icon={faCheck} className="text-blue-400 mr-3" />
             1TB local recording storage system
             </li>
         </ul>
@@ -189,19 +201,19 @@ return (
         </div>
         <ul className="space-y-4 mb-8 flex-grow">
             <li className="flex items-center text-blue-200">
-            <i className="fas fa-check text-blue-400 mr-3"></i>
+            <FontAwesomeIcon icon={faCheck} className="text-blue-400 mr-3" />
             Everything from Essential Package
             </li>
             <li className="flex items-center text-blue-200">
-            <i className="fas fa-check text-blue-400 mr-3"></i>
+            <FontAwesomeIcon icon={faCheck} className="text-blue-400 mr-3" />
             4 additional 4K security cameras
             </li>
             <li className="flex items-center text-blue-200">
-            <i className="fas fa-check text-blue-400 mr-3"></i>
+            <FontAwesomeIcon icon={faCheck} className="text-blue-400 mr-3" />
             Advanced NVR with AI object recognition
             </li>
             <li className="flex items-center text-blue-200">
-            <i className="fas fa-check text-blue-400 mr-3"></i>
+            <FontAwesomeIcon icon={faCheck} className="text-blue-400 mr-3" />
             2TB expanded recording storage capacity
             </li>
         </ul>
@@ -224,19 +236,19 @@ return (
         </div>
         <ul className="space-y-4 mb-8 flex-grow">
             <li className="flex items-center text-blue-50">
-            <i className="fas fa-check text-white mr-3"></i>
+            <FontAwesomeIcon icon={faCheck} className="text-white mr-3" />
             Customized camera placement
             </li>
             <li className="flex items-center text-blue-50">
-            <i className="fas fa-check text-white mr-3"></i>
+            <FontAwesomeIcon icon={faCheck} className="text-white mr-3" />
             Flexible storage options
             </li>
             <li className="flex items-center text-blue-50">
-            <i className="fas fa-check text-white mr-3"></i>
+            <FontAwesomeIcon icon={faCheck} className="text-white mr-3" />
             Specialized equipment selection
             </li>
             <li className="flex items-center text-blue-50">
-            <i className="fas fa-check text-white mr-3"></i>
+            <FontAwesomeIcon icon={faCheck} className="text-white mr-3" />
             Expert consultation included
             </li>
         </ul>
@@ -268,7 +280,7 @@ return (
         <div className="space-y-6">
             <div className="flex items-center space-x-4">
             <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center">
-                <i className="fas fa-home text-white"></i>
+                <FontAwesomeIcon icon={faHome} className="text-white" />
             </div>
             <div>
                 <h3 className="text-xl font-semibold text-white">Indoor Monitoring</h3>
@@ -277,7 +289,7 @@ return (
             </div>
             <div className="flex items-center space-x-4">
             <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center">
-                <i className="fas fa-brain text-white"></i>
+                <FontAwesomeIcon icon={faBrain} className="text-white" />
             </div>
             <div>
                 <h3 className="text-xl font-semibold text-white">AI Object Detection</h3>
@@ -286,7 +298,7 @@ return (
             </div>
             <div className="flex items-center space-x-4">
             <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center">
-                <i className="fas fa-tree text-white"></i>
+                <FontAwesomeIcon icon={faTree} className="text-white" />
             </div>
             <div>
                 <h3 className="text-xl font-semibold text-white">Outdoor Protection</h3>
@@ -315,21 +327,21 @@ return (
     <div className="grid grid-cols-3 gap-8 mb-12">
         <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8">
         <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-            <i className="fas fa-envelope text-white text-xl"></i>
+            <FontAwesomeIcon icon={faEnvelope} className="text-white text-xl" />
         </div>
         <h3 className="text-xl font-semibold text-white mb-2">Email Us</h3>
         <p className="text-blue-200">info@securesavannah.com</p>
         </div>
         <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8">
         <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-            <i className="fas fa-globe text-white text-xl"></i>
+            <FontAwesomeIcon icon={faGlobe} className="text-white text-xl" />
         </div>
         <h3 className="text-xl font-semibold text-white mb-2">Visit Website</h3>
         <p className="text-blue-200">www.securesavannah.com</p>
         </div>
         <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8">
         <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
-            <i className="fas fa-phone text-white text-xl"></i>
+            <FontAwesomeIcon icon={faPhone} className="text-white text-xl" />
         </div>
         <h3 className="text-xl font-semibold text-white mb-2">Call Today</h3>
         <p className="text-blue-200">(912) 310-7665</p>
