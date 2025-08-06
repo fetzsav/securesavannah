@@ -261,7 +261,7 @@ const HomePage: React.FC = () => {
           <div className="text-center mt-12">
             <p className="text-blue-200 text-lg">
               All packages include local recording storage - no cloud subscription required.
-              <span className="font-semibold text-white"> You own your data... because that's true security.</span>
+              <span className="font-semibold text-white"> You own your data... because that&apos;s true security.</span>
             </p>
             <p className="text-blue-200 mt-4">
               Limited time offer: Save 15% on Essential and Professional packages. Offer ends August 31st, 2025.
@@ -308,7 +308,7 @@ const HomePage: React.FC = () => {
                   <div>
                     <h3 className="text-xl font-semibold text-white mb-1">Outdoor Protection</h3>
                     <p className="text-blue-200">
-                      Weather-resistant cameras designed to secure your property's perimeter.
+                      Weather-resistant cameras designed to secure your property&apos;s perimeter.
                     </p>
                   </div>
                 </div>
