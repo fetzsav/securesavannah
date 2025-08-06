@@ -139,7 +139,7 @@ return (
     </div>
     <div className="grid grid-cols-3 gap-8 max-w-6xl mx-auto">
         {/* Package 1 */}
-        <div className="bg-slate-800/80 backdrop-blur-sm rounded-2xl p-8 border border-slate-700">
+        <div className="flex flex-col bg-slate-800/80 backdrop-blur-sm rounded-2xl p-8 border border-slate-700">
         <div className="relative mb-6">
             <div className="absolute -top-4 right-0 bg-green-500 text-white text-sm px-3 py-1 rounded-full">Save 15%</div>
             <h3 className="text-2xl font-bold text-white">Essential Package</h3>
@@ -148,7 +148,7 @@ return (
             <div className="text-3xl font-bold text-blue-400">$662</div>
             </div>
         </div>
-        <ul className="space-y-4 mb-16">
+        <ul className="space-y-4 mb-8 flex-grow">
             <li className="flex items-center text-blue-200">
             <i className="fas fa-check text-blue-400 mr-3"></i>
             Professional doorbell camera installation
@@ -178,7 +178,7 @@ return (
         </button>
         </div>
         {/* Package 2 */}
-        <div className="bg-slate-800/80 backdrop-blur-sm rounded-2xl p-8 border border-blue-500">
+        <div className="flex flex-col bg-slate-800/80 backdrop-blur-sm rounded-2xl p-8 border border-blue-500">
         <div className="relative mb-6">
             <div className="absolute -top-4 right-0 bg-green-500 text-white text-sm px-3 py-1 rounded-full">Save 15%</div>
             <h3 className="text-2xl font-bold text-white">Professional Package</h3>
@@ -187,7 +187,7 @@ return (
             <div className="text-3xl font-bold text-blue-400">$1,325</div>
             </div>
         </div>
-        <ul className="space-y-4 mb-12">
+        <ul className="space-y-4 mb-8 flex-grow">
             <li className="flex items-center text-blue-200">
             <i className="fas fa-check text-blue-400 mr-3"></i>
             Everything from Essential Package
@@ -217,12 +217,12 @@ return (
         </button>
         </div>
         {/* Custom Installation Package */}
-        <div className="bg-gradient-to-br from-blue-600 to-blue-800 backdrop-blur-sm rounded-2xl p-8 border border-blue-400">
+        <div className="flex flex-col bg-gradient-to-br from-blue-600 to-blue-800 backdrop-blur-sm rounded-2xl p-8 border border-blue-400">
         <div className="mb-6">
             <h3 className="text-2xl font-bold text-white">Custom Installation</h3>
             <p className="text-blue-100 mt-2">Tailored security solutions for unique requirements</p>
         </div>
-        <ul className="space-y-4 mb-10">
+        <ul className="space-y-4 mb-8 flex-grow">
             <li className="flex items-center text-blue-50">
             <i className="fas fa-check text-white mr-3"></i>
             Customized camera placement
@@ -251,7 +251,7 @@ return (
     <div className="text-center mt-12">
         <p className="text-blue-200 text-lg">
         All packages include local recording storage - no cloud subscription required.
-        <span className="font-semibold text-white"> You own your data... because that's true security.</span>
+        <span className="font-semibold text-white"> You own your data... because that&apos;s true security.</span>
         </p>
         <p className="text-blue-200 mt-4">
         Limited time offer: Save 15% on Essential and Professional packages
