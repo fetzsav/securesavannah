@@ -1,6 +1,8 @@
 // The exported code uses Tailwind CSS. Install Tailwind CSS in your dev environment to ensure all styles work.
+"use client";
 import React, { useState } from 'react';
-const App: React.FC = () => {
+import Image from 'next/image';
+const HomePage: React.FC = () => {
 const [selectedPackage, setSelectedPackage] = useState<string>('');
 return (
 <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
@@ -8,7 +10,7 @@ return (
 <div
     className="relative h-screen flex items-center justify-center overflow-hidden"
     style={{
-    backgroundImage: `url('/images/splash2.jpg')`, // <-- Updated
+    backgroundImage: `url('/images/splash1.jpg')`, // <-- Updated
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat'
@@ -19,10 +21,11 @@ return (
     <div className="absolute top-0 left-0 right-0 z-20 p-8">
     <div className="flex justify-between items-center max-w-7xl mx-auto">
         <div className="flex items-center space-x-4">
-        <img
+        <Image
             src="/images/logo.png" // <-- Updated
             alt="SecureSavannah Logo"
-            className="h-20 w-auto"
+            width={200}
+            height={80}
         />
         </div>
         <div className="flex space-x-4">
@@ -56,12 +59,13 @@ return (
         </button>
         </div>
     </div>
-    <div className="relative">
-        <div className="w-96 h-96 rounded-full overflow-hidden border-4 border-white/20 backdrop-blur-sm">
-        <img
+    <div>
+        <div className="relative w-96 h-96 rounded-full overflow-hidden border-4 border-white/20 backdrop-blur-sm">
+        <Image
             src="/images/turret_cam.jpg" // <-- Updated
             alt="Security Camera"
-            className="w-full h-full object-cover object-top"
+            className="object-cover object-top"
+            fill
         />
         </div>
     </div>
@@ -292,11 +296,12 @@ return (
         </div>
         </div>
         <div className="relative">
-        <div className="w-full h-96 rounded-2xl overflow-hidden">
-            <img
-            src="/images/splash1.jpg" // <-- Updated
+        <div className="relative w-full h-96 rounded-2xl overflow-hidden">
+            <Image
+            src="/images/splash2.jpg" // <-- Updated
             alt="Security System Setup"
-            className="w-full h-full object-cover object-top"
+            className="object-cover object-top"
+            fill
             />
         </div>
         </div>
@@ -344,4 +349,4 @@ return (
 </div>
 );
 };
-export default App;
+export default HomePage;
