@@ -35,17 +35,23 @@ const HomePage: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-blue-900/80 to-transparent"></div>
 
         {/* Header Navigation */}
-        <div className="absolute top-0 left-0 right-0 z-20 p-8">
-          <div className="flex justify-center lg:justify-between items-center max-w-7xl mx-auto">
+        <div className="absolute top-0 left-0 right-0 z-20 p-4 sm:p-8">
+        <div className="flex flex-wrap justify-center lg:justify-between items-center max-w-7xl mx-auto">
             <div className="flex items-center space-x-4">
-              <Image src="/images/logo.png" alt="SecureSavannah Logo" width={200} height={80} />
+            <Image
+                src="/images/logo.png"
+                alt="SecureSavannah Logo"
+                width={300}
+                height={120}
+                className="w-56 sm:w-64 md:w-72 lg:w-[300px] h-auto"
+            />
             </div>
-          </div>
+        </div>
         </div>
 
         {/* Hero Content */}
-        <div className="relative z-10 max-w-7xl w-full mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="text-white text-center lg:text-left">
+            <div className="relative z-10 max-w-7xl w-full mx-auto px-8 pt-24 sm:pt-40 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="text-white text-center lg:text-left">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
               Advanced Security Camera Solutions
             </h1>
@@ -140,7 +146,7 @@ const HomePage: React.FC = () => {
         </div>
       </div>
 
-      {/* Packages Section */}
+ {/* Packages Section */}
       <div className="py-20 bg-gradient-to-br from-slate-900 to-blue-900">
         <div className="max-w-7xl mx-auto px-8">
           <div className="text-center mb-16">
@@ -148,8 +154,11 @@ const HomePage: React.FC = () => {
             <p className="text-xl text-blue-200">Complete security solutions tailored to your needs</p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div className="flex flex-col bg-slate-800/80 backdrop-blur-sm rounded-2xl p-8 border border-slate-700">
-              <div className="relative mb-6">
+            
+            {/* Package 1 */}
+            {/* --- CLASSES ADDED HERE for responsive alignment --- */}
+            <div className="flex flex-col items-center text-center lg:items-stretch lg:text-left bg-slate-800/80 backdrop-blur-sm rounded-2xl p-8 border border-slate-700">
+              <div className="relative mb-6 w-full">
                 <div className="absolute -top-4 -right-4 bg-green-500 text-white text-sm px-3 py-1 rounded-full">
                   Save 15%
                 </div>
@@ -178,18 +187,17 @@ const HomePage: React.FC = () => {
                 </li>
               </ul>
               <button
-                onClick={() => setSelectedPackage('essential')}
-                className={`w-full py-4 font-semibold rounded-lg whitespace-nowrap cursor-pointer transition-colors ${
-                  selectedPackage === 'essential'
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-blue-600 hover:bg-blue-700 text-white'
-                }`}
+                onClick={() => {}}
+                className="w-full py-4 font-semibold rounded-lg whitespace-nowrap cursor-pointer transition-colors bg-blue-600 hover:bg-blue-700 text-white"
               >
                 Get Started
               </button>
             </div>
-            <div className="flex flex-col bg-slate-800/80 backdrop-blur-sm rounded-2xl p-8 border-2 border-blue-500 shadow-lg shadow-blue-500/20">
-              <div className="relative mb-6">
+
+            {/* Package 2 */}
+            {/* --- CLASSES ADDED HERE for responsive alignment --- */}
+            <div className="flex flex-col items-center text-center lg:items-stretch lg:text-left bg-slate-800/80 backdrop-blur-sm rounded-2xl p-8 border-2 border-blue-500 shadow-lg shadow-blue-500/20">
+              <div className="relative mb-6 w-full">
                 <div className="absolute -top-4 -right-4 bg-green-500 text-white text-sm px-3 py-1 rounded-full">
                   Save 15%
                 </div>
@@ -217,18 +225,17 @@ const HomePage: React.FC = () => {
                 </li>
               </ul>
               <button
-                onClick={() => setSelectedPackage('professional')}
-                className={`w-full py-4 font-semibold rounded-lg whitespace-nowrap cursor-pointer transition-colors ${
-                  selectedPackage === 'professional'
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-blue-600 hover:bg-blue-700 text-white'
-                }`}
+                onClick={() => {}}
+                className="w-full py-4 font-semibold rounded-lg whitespace-nowrap cursor-pointer transition-colors bg-blue-600 hover:bg-blue-700 text-white"
               >
                 Get Started
               </button>
             </div>
-            <div className="flex flex-col bg-gradient-to-br from-blue-600 to-blue-800 backdrop-blur-sm rounded-2xl p-8 border border-blue-400">
-              <div className="mb-6">
+
+            {/* Package 3 */}
+            {/* --- CLASSES ADDED HERE for responsive alignment --- */}
+            <div className="flex flex-col items-center text-center lg:items-stretch lg:text-left bg-gradient-to-br from-blue-600 to-blue-800 backdrop-blur-sm rounded-2xl p-8 border border-blue-400">
+              <div className="mb-6 w-full">
                 <h3 className="text-2xl font-bold text-white">Custom Installation</h3>
                 <p className="text-blue-100 mt-2">Tailored security solutions for unique requirements</p>
               </div>
@@ -251,7 +258,7 @@ const HomePage: React.FC = () => {
                 </li>
               </ul>
               <button
-                onClick={() => setSelectedPackage('custom')}
+                onClick={() => {}}
                 className="w-full py-4 bg-white text-blue-600 font-semibold rounded-lg whitespace-nowrap cursor-pointer hover:bg-blue-50 transition-colors"
               >
                 Schedule Consultation
@@ -364,16 +371,17 @@ const HomePage: React.FC = () => {
               <p className="text-blue-200">(912) 310-7665</p>
             </div>
           </div>
-          <div className="bg-blue-600 rounded-2xl p-8">
-            <h3 className="text-2xl font-bold text-white mb-4">FREE SECURITY CONSULTATION</h3>
-            <p className="text-blue-100 text-lg mb-6">
-              Schedule your complimentary security assessment and receive a customized protection plan for your
-              property.
-            </p>
-            <button className="px-8 py-4 bg-white text-blue-600 font-semibold rounded-lg whitespace-nowrap cursor-pointer hover:bg-blue-50 transition-colors">
-              Schedule Free Consultation
-            </button>
-          </div>
+            <div className="bg-blue-600 rounded-2xl p-6 text-center sm:p-8"> {/* <-- PADDING & TEXT ALIGNMENT */}
+                <h3 className="text-xl font-bold text-white mb-4 sm:text-2xl"> {/* <-- FONT SIZE */}
+                    FREE SECURITY CONSULTATION
+                </h3>
+                <p className="text-base text-blue-100 mb-6 sm:text-lg"> {/* <-- FONT SIZE */}
+                    Schedule your complimentary security assessment and receive a customized protection plan for your property.
+                </p>
+                <button className="w-full sm:w-auto px-8 py-3 bg-white text-blue-600 font-semibold rounded-lg cursor-pointer hover:bg-blue-50 transition-colors"> {/* <-- RESPONSIVE WIDTH */}
+                    Schedule Free Consultation
+                </button>
+            </div>
         </div>
       </div>
     </div>

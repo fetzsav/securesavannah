@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "Secure Savannah",
   description: "Security cams, sound systems, and more!",
     icons: {
-    icon: '/favicon.ico', // or '/favicon.png', '/icon.svg', etc.
+    icon: '/favicon.png', // or '/favicon.png', '/icon.svg', etc.
   },
 };
 
