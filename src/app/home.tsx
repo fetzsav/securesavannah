@@ -368,7 +368,7 @@ const HomePage: React.FC = () => {
                 <FontAwesomeIcon icon={faPhone} className="text-white text-xl" />
               </div>
               <h3 className="text-xl font-semibold text-white mb-2">Call Today</h3>
-              <p className="text-blue-200">(912) 310-7665</p>
+              <p className="text-blue-200">(912) 310-7650</p>
             </div>
           </div>
             <div className="bg-blue-600 rounded-2xl p-6 text-center sm:p-8"> {/* <-- PADDING & TEXT ALIGNMENT */}
