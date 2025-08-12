@@ -20,6 +20,11 @@ import {
 
 const HomePage: React.FC = () => {
   const [selectedPackage, setSelectedPackage] = useState<string>('');
+
+  const handlePackageSelect = (pkg: string) => {
+    setSelectedPackage(pkg);
+  };
+
   return (
     <div className="min-h-screen bg-slate-900">
       {/* Hero Section */}
@@ -157,7 +162,9 @@ const HomePage: React.FC = () => {
             
             {/* Package 1 */}
             {/* --- CLASSES ADDED HERE for responsive alignment --- */}
-            <div className="flex flex-col items-center text-center lg:items-stretch lg:text-left bg-slate-800/80 backdrop-blur-sm rounded-2xl p-8 border border-slate-700">
+            <div
+              className={`flex flex-col items-center text-center lg:items-stretch lg:text-left bg-slate-800/80 backdrop-blur-sm rounded-2xl p-8 border border-slate-700 ${selectedPackage === 'Essential' ? 'ring-2 ring-blue-400' : ''}`}
+            >
               <div className="relative mb-6 w-full">
                 <div className="absolute -top-4 -right-4 bg-green-500 text-white text-sm px-3 py-1 rounded-full">
                   Save 15%
@@ -187,7 +194,7 @@ const HomePage: React.FC = () => {
                 </li>
               </ul>
               <button
-                onClick={() => {}}
+                onClick={() => handlePackageSelect('Essential')}
                 className="w-full py-4 font-semibold rounded-lg whitespace-nowrap cursor-pointer transition-colors bg-blue-600 hover:bg-blue-700 text-white"
               >
                 Get Started
@@ -196,7 +203,9 @@ const HomePage: React.FC = () => {
 
             {/* Package 2 */}
             {/* --- CLASSES ADDED HERE for responsive alignment --- */}
-            <div className="flex flex-col items-center text-center lg:items-stretch lg:text-left bg-slate-800/80 backdrop-blur-sm rounded-2xl p-8 border-2 border-blue-500 shadow-lg shadow-blue-500/20">
+            <div
+              className={`flex flex-col items-center text-center lg:items-stretch lg:text-left bg-slate-800/80 backdrop-blur-sm rounded-2xl p-8 border-2 border-blue-500 shadow-lg shadow-blue-500/20 ${selectedPackage === 'Professional' ? 'ring-2 ring-blue-400' : ''}`}
+            >
               <div className="relative mb-6 w-full">
                 <div className="absolute -top-4 -right-4 bg-green-500 text-white text-sm px-3 py-1 rounded-full">
                   Save 15%
@@ -225,7 +234,7 @@ const HomePage: React.FC = () => {
                 </li>
               </ul>
               <button
-                onClick={() => {}}
+                onClick={() => handlePackageSelect('Professional')}
                 className="w-full py-4 font-semibold rounded-lg whitespace-nowrap cursor-pointer transition-colors bg-blue-600 hover:bg-blue-700 text-white"
               >
                 Get Started
@@ -234,7 +243,9 @@ const HomePage: React.FC = () => {
 
             {/* Package 3 */}
             {/* --- CLASSES ADDED HERE for responsive alignment --- */}
-            <div className="flex flex-col items-center text-center lg:items-stretch lg:text-left bg-gradient-to-br from-blue-600 to-blue-800 backdrop-blur-sm rounded-2xl p-8 border border-blue-400">
+            <div
+              className={`flex flex-col items-center text-center lg:items-stretch lg:text-left bg-gradient-to-br from-blue-600 to-blue-800 backdrop-blur-sm rounded-2xl p-8 border border-blue-400 ${selectedPackage === 'Custom' ? 'ring-2 ring-blue-400' : ''}`}
+            >
               <div className="mb-6 w-full">
                 <h3 className="text-2xl font-bold text-white">Custom Installation</h3>
                 <p className="text-blue-100 mt-2">Tailored security solutions for unique requirements</p>
@@ -258,13 +269,18 @@ const HomePage: React.FC = () => {
                 </li>
               </ul>
               <button
-                onClick={() => {}}
+                onClick={() => handlePackageSelect('Custom')}
                 className="w-full py-4 bg-white text-blue-600 font-semibold rounded-lg whitespace-nowrap cursor-pointer hover:bg-blue-50 transition-colors"
               >
                 Schedule Consultation
               </button>
             </div>
           </div>
+          {selectedPackage && (
+            <div className="text-center mt-8">
+              <p className="text-white font-semibold">Selected package: {selectedPackage}</p>
+            </div>
+          )}
           <div className="text-center mt-12">
             <p className="text-blue-200 text-lg">
               All packages include local recording storage - no cloud subscription required.
