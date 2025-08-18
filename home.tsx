@@ -62,10 +62,10 @@ const HomePage: React.FC = () => {
               monitoring capabilities for complete peace of mind.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start">
-              <button className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold !rounded-button whitespace-nowrap transition-colors">
+              <button className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg whitespace-nowrap transition-colors">
                 View Packages
               </button>
-              <button className="px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-slate-900 font-semibold !rounded-button whitespace-nowrap transition-colors">
+              <button className="px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-slate-900 font-semibold rounded-lg whitespace-nowrap transition-colors">
                 Free Consultation
               </button>
             </div>
