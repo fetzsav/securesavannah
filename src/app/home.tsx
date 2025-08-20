@@ -1,6 +1,7 @@
 // The exported code uses Tailwind CSS. Install Tailwind CSS in your dev environment to ensure all styles work.
 "use client";
-import React, { useState } from 'react';
+import React from 'react';
+import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -8,7 +9,6 @@ import {
   faMicrophone,
   faMoon,
   faArrowsUpDownLeftRight,
-  faCheck,
   faHome,
   faBrain,
   faTree,
@@ -19,11 +19,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 const HomePage: React.FC = () => {
-  const [selectedPackage, setSelectedPackage] = useState<string>('');
-
-  const handlePackageSelect = (pkg: string) => {
-    setSelectedPackage(pkg);
-  };
+  const router = useRouter();
 
   return (
     <div className="min-h-screen bg-slate-900">
@@ -79,10 +75,7 @@ const HomePage: React.FC = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start">
-              <button className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg whitespace-nowrap cursor-pointer transition-colors">
-                View Packages
-              </button>
-              <button className="px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-slate-900 font-semibold rounded-lg whitespace-nowrap cursor-pointer transition-colors">
+              <button onClick={() => router.push('/consultation')} className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg whitespace-nowrap cursor-pointer transition-colors">
                 Free Consultation
               </button>
             </div>
@@ -147,148 +140,6 @@ const HomePage: React.FC = () => {
                 </p>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-
- {/* Packages Section */}
-      <div className="py-20 bg-gradient-to-br from-slate-900 to-blue-900">
-        <div className="max-w-7xl mx-auto px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">Professional Installation Packages</h2>
-            <p className="text-xl text-blue-200">Complete security solutions tailored to your needs</p>
-          </div>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            
-            {/* Package 1 */}
-            {/* --- CLASSES ADDED HERE for responsive alignment --- */}
-            <div
-              className={`flex flex-col items-center text-center lg:items-stretch lg:text-left bg-slate-800/80 backdrop-blur-sm rounded-2xl p-8 border border-slate-700 ${selectedPackage === 'Essential' ? 'ring-2 ring-blue-400' : ''}`}
-            >
-              <div className="relative mb-6 w-full">
-                <div className="absolute -top-4 -right-4 bg-green-500 text-white text-sm px-3 py-1 rounded-full">
-                  Save 15%
-                </div>
-                <h3 className="text-2xl font-bold text-white">Essential Package</h3>
-                <div className="mt-2">
-                  <span className="text-lg text-gray-400 line-through">$779</span>
-                  <div className="text-3xl font-bold text-blue-400">$662</div>
-                </div>
-              </div>
-              <ul className="space-y-4 mb-8 flex-grow">
-                <li className="flex items-center text-blue-200">
-                  <FontAwesomeIcon icon={faCheck} className="text-blue-400 mr-3" />
-                  Professional doorbell camera installation
-                </li>
-                <li className="flex items-center text-blue-200">
-                  <FontAwesomeIcon icon={faCheck} className="text-blue-400 mr-3" />
-                  Single garage monitoring camera
-                </li>
-                <li className="flex items-center text-blue-200">
-                  <FontAwesomeIcon icon={faCheck} className="text-blue-400 mr-3" />
-                  AI-powered motion detection alerts
-                </li>
-                <li className="flex items-center text-blue-200">
-                  <FontAwesomeIcon icon={faCheck} className="text-blue-400 mr-3" />
-                  1TB local recording storage system
-                </li>
-              </ul>
-              <button
-                onClick={() => handlePackageSelect('Essential')}
-                className="w-full py-4 font-semibold rounded-lg whitespace-nowrap cursor-pointer transition-colors bg-blue-600 hover:bg-blue-700 text-white"
-              >
-                Get Started
-              </button>
-            </div>
-
-            {/* Package 2 */}
-            {/* --- CLASSES ADDED HERE for responsive alignment --- */}
-            <div
-              className={`flex flex-col items-center text-center lg:items-stretch lg:text-left bg-slate-800/80 backdrop-blur-sm rounded-2xl p-8 border-2 border-blue-500 shadow-lg shadow-blue-500/20 ${selectedPackage === 'Professional' ? 'ring-2 ring-blue-400' : ''}`}
-            >
-              <div className="relative mb-6 w-full">
-                <div className="absolute -top-4 -right-4 bg-green-500 text-white text-sm px-3 py-1 rounded-full">
-                  Save 15%
-                </div>
-                <h3 className="text-2xl font-bold text-white">Professional Package</h3>
-                <div className="mt-2">
-                  <span className="text-lg text-gray-400 line-through">$1,559</span>
-                  <div className="text-3xl font-bold text-blue-400">$1,325</div>
-                </div>
-              </div>
-              <ul className="space-y-4 mb-8 flex-grow">
-                <li className="flex items-center text-blue-200">
-                  <FontAwesomeIcon icon={faCheck} className="text-blue-400 mr-3" />
-                  Everything from Essential Package
-                </li>
-                <li className="flex items-center text-blue-200">
-                  <FontAwesomeIcon icon={faCheck} className="text-blue-400 mr-3" />4 additional 4K security cameras
-                </li>
-                <li className="flex items-center text-blue-200">
-                  <FontAwesomeIcon icon={faCheck} className="text-blue-400 mr-3" />
-                  Advanced NVR with AI object recognition
-                </li>
-                <li className="flex items-center text-blue-200">
-                  <FontAwesomeIcon icon={faCheck} className="text-blue-400 mr-3" />
-                  2TB expanded recording storage capacity
-                </li>
-              </ul>
-              <button
-                onClick={() => handlePackageSelect('Professional')}
-                className="w-full py-4 font-semibold rounded-lg whitespace-nowrap cursor-pointer transition-colors bg-blue-600 hover:bg-blue-700 text-white"
-              >
-                Get Started
-              </button>
-            </div>
-
-            {/* Package 3 */}
-            {/* --- CLASSES ADDED HERE for responsive alignment --- */}
-            <div
-              className={`flex flex-col items-center text-center lg:items-stretch lg:text-left bg-gradient-to-br from-blue-600 to-blue-800 backdrop-blur-sm rounded-2xl p-8 border border-blue-400 ${selectedPackage === 'Custom' ? 'ring-2 ring-blue-400' : ''}`}
-            >
-              <div className="mb-6 w-full">
-                <h3 className="text-2xl font-bold text-white">Custom Installation</h3>
-                <p className="text-blue-100 mt-2">Tailored security solutions for unique requirements</p>
-              </div>
-              <ul className="space-y-4 mb-8 flex-grow">
-                <li className="flex items-center text-blue-50">
-                  <FontAwesomeIcon icon={faCheck} className="text-white mr-3" />
-                  Customized camera placement
-                </li>
-                <li className="flex items-center text-blue-50">
-                  <FontAwesomeIcon icon={faCheck} className="text-white mr-3" />
-                  Flexible storage options
-                </li>
-                <li className="flex items-center text-blue-50">
-                  <FontAwesomeIcon icon={faCheck} className="text-white mr-3" />
-                  Specialized equipment selection
-                </li>
-                <li className="flex items-center text-blue-50">
-                  <FontAwesomeIcon icon={faCheck} className="text-white mr-3" />
-                  Expert consultation included
-                </li>
-              </ul>
-              <button
-                onClick={() => handlePackageSelect('Custom')}
-                className="w-full py-4 bg-white text-blue-600 font-semibold rounded-lg whitespace-nowrap cursor-pointer hover:bg-blue-50 transition-colors"
-              >
-                Schedule Consultation
-              </button>
-            </div>
-          </div>
-          {selectedPackage && (
-            <div className="text-center mt-8">
-              <p className="text-white font-semibold">Selected package: {selectedPackage}</p>
-            </div>
-          )}
-          <div className="text-center mt-12">
-            <p className="text-blue-200 text-lg">
-              All packages include local recording storage - no cloud subscription required.
-              <span className="font-semibold text-white"> You own your data... because that&apos;s true security.</span>
-            </p>
-            <p className="text-blue-200 mt-4">
-              Limited time offer: Save 15% on Essential and Professional packages. Offer ends August 31st, 2025.
-            </p>
           </div>
         </div>
       </div>
@@ -394,7 +245,7 @@ const HomePage: React.FC = () => {
                 <p className="text-base text-blue-100 mb-6 sm:text-lg"> {/* <-- FONT SIZE */}
                     Schedule your complimentary security assessment and receive a customized protection plan for your property.
                 </p>
-                <button className="w-full sm:w-auto px-8 py-3 bg-white text-blue-600 font-semibold rounded-lg cursor-pointer hover:bg-blue-50 transition-colors"> {/* <-- RESPONSIVE WIDTH */}
+                <button onClick={() => router.push('/consultation')} className="w-full sm:w-auto px-8 py-3 bg-white text-blue-600 font-semibold rounded-lg cursor-pointer hover:bg-blue-50 transition-colors"> {/* <-- RESPONSIVE WIDTH */}
                     Schedule Free Consultation
                 </button>
             </div>
