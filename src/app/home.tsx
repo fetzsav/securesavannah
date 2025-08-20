@@ -1,6 +1,7 @@
 // The exported code uses Tailwind CSS. Install Tailwind CSS in your dev environment to ensure all styles work.
 "use client";
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -19,6 +20,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 const HomePage: React.FC = () => {
+  const router = useRouter();
   const [selectedPackage, setSelectedPackage] = useState<string>('');
 
   const handlePackageSelect = (pkg: string) => {
@@ -79,10 +81,10 @@ const HomePage: React.FC = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start">
-              <button className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg whitespace-nowrap cursor-pointer transition-colors">
+              <button onClick={() => router.push('/packages')} className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg whitespace-nowrap cursor-pointer transition-colors">
                 View Packages
               </button>
-              <button className="px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-slate-900 font-semibold rounded-lg whitespace-nowrap cursor-pointer transition-colors">
+              <button onClick={() => router.push('/consultation')} className="px-8 py-4 border-2 border-white text-white hover:bg-white hover:text-slate-900 font-semibold rounded-lg whitespace-nowrap cursor-pointer transition-colors">
                 Free Consultation
               </button>
             </div>
@@ -194,7 +196,7 @@ const HomePage: React.FC = () => {
                 </li>
               </ul>
               <button
-                onClick={() => handlePackageSelect('Essential')}
+                onClick={() => {handlePackageSelect('Essential'); router.push('/packages/essential');}}
                 className="w-full py-4 font-semibold rounded-lg whitespace-nowrap cursor-pointer transition-colors bg-blue-600 hover:bg-blue-700 text-white"
               >
                 Get Started
@@ -234,7 +236,7 @@ const HomePage: React.FC = () => {
                 </li>
               </ul>
               <button
-                onClick={() => handlePackageSelect('Professional')}
+                onClick={() => {handlePackageSelect('Professional'); router.push('/packages/professional');}}
                 className="w-full py-4 font-semibold rounded-lg whitespace-nowrap cursor-pointer transition-colors bg-blue-600 hover:bg-blue-700 text-white"
               >
                 Get Started
@@ -269,7 +271,7 @@ const HomePage: React.FC = () => {
                 </li>
               </ul>
               <button
-                onClick={() => handlePackageSelect('Custom')}
+                onClick={() => {handlePackageSelect('Custom'); router.push('/consultation');}}
                 className="w-full py-4 bg-white text-blue-600 font-semibold rounded-lg whitespace-nowrap cursor-pointer hover:bg-blue-50 transition-colors"
               >
                 Schedule Consultation
@@ -394,7 +396,7 @@ const HomePage: React.FC = () => {
                 <p className="text-base text-blue-100 mb-6 sm:text-lg"> {/* <-- FONT SIZE */}
                     Schedule your complimentary security assessment and receive a customized protection plan for your property.
                 </p>
-                <button className="w-full sm:w-auto px-8 py-3 bg-white text-blue-600 font-semibold rounded-lg cursor-pointer hover:bg-blue-50 transition-colors"> {/* <-- RESPONSIVE WIDTH */}
+                <button onClick={() => router.push('/consultation')} className="w-full sm:w-auto px-8 py-3 bg-white text-blue-600 font-semibold rounded-lg cursor-pointer hover:bg-blue-50 transition-colors"> {/* <-- RESPONSIVE WIDTH */}
                     Schedule Free Consultation
                 </button>
             </div>
